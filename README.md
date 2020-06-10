@@ -158,6 +158,7 @@ function booksReducer(state = [], action) {
     case "REMOVE_BOOK":
       idx = state.findIndex(book => book.id  === action.id)
       return [...state.slice(0, idx), ...state.slice(idx + 1)];
+      // [book1, book2, book3, book4, book5, book6]
 
     default:
       return state;
@@ -293,7 +294,7 @@ function booksReducer(state = [], action) {
     case "REMOVE_BOOK":
       idx = state.findIndex(book => book.id === action.id);
       return [...state.slice(0, idx), ...state.slice(idx + 1)];
-
+  //  return [...state.filter(book => book.id !== idx)]
     default:
       return state;
   }
